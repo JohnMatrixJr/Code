@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body onload="main()">
+
+    <nav id = "header">
+
+        <ul>
+                <li>
+                    <a href="index.html"> Home</a>
+                </li>
+                <li>
+                    <a href="lessons.html"> Lessons</a>
+                </li> 
+    
+                <li>
+                    <a href="contact.html"> Contact</a>
+                </li> 
+    
+                <li>
+                    <a href="about.html"> About</a>
+                </li> 
+        </ul>    
+    </nav>
+    
+ 
+
+    <div id = "banner">
+    <h2>Contact Us</h2>
+    </div>
+  
+    <div>
+        <h3>How can we help?</h3>
+        <p class = "p1">Our team is looking forward to hear from you and ready to help in any way we can.</p>
+        <p class = "p1">For course queries, please quote the relevant course number and total attendees. </p>
+    </div>
+
+
+        <div id = Contact>
+
+                <form id = "contact" action="results.html" method="get">
+
+                    <p id="FNameRequiredError" style="display: none">  First name is a required field </p>
+                    <p id="SNameRequiredError" style="display: none">  Surname is a required field </p>
+                    <p id="TelRequiredError" style="display: none">  Telephone is a required field </p>
+                    <p id="EmailRequiredError" style="display: none">  Email is a required field </p>
+
+                    <p>
+                        <input placeholder="Forename" type="text" name="first_name" > 
+                    </p>
+
+                    <p id="errorName" style="display:none"> Required </p> 
+
+                    <p>
+                        <input placeholder="Surname" type="text" name="last_name" > 
+                    </p>
+
+                    <p>
+                        <input placeholder="Telephone" type="tel" name="tel" > 
+                    </p>
+
+                    <p>
+                        <input placeholder="Email" type="email" name="email" > 
+                    </p>
+
+                    <p>
+                        <textarea id = "message" placeholder="Enter your message..."name="suggestions" rows="10" cols="30"></textarea>
+                    </p>
+                    
+                    <p>
+                        <input type="checkbox" name= "Opt" value="Opt-out of future contact" >
+                        <label id = "ol" for="Opt">Please click here if you do not wish to recieve emails about future promotions.</label> 
+                    </p>
+
+                    <p>
+                        <input type="submit" name="submit" value="Submit">
+                    </p>
+
+
+                </form>
+        </div >  
+
+
+
+        
+<footer class = "footer">
+    <ul>
+        <li><a href= # > Privicy & Cookies   </a></li>
+        <li><a href= # > Terms of Use   </a></li>
+    </ul>
+</footer>
+
+
+<script>
+
+function main() {
+    
+    console.log("in main function");
+    var myForm  = document.getElementById("contact");
+    myForm.addEventListener("submit",validateForm);
+  }
+  
+  //validate callback function 
+  function validateForm(event) {
+    var formValid = true;
+    var myForm = document.getElementById("contact"); 
+    
+    if (myForm.first_name.value == "") {
+        formValid = false;
+        //display error message 
+        document.getElementById("FNameRequiredError").style.display = "block";
+        //stop form from submitting
+        event.preventDefault();
+    } else {
+         document.getElementById("FNameRequiredError").style.display = "none";
+    }
+    
+    if (myForm.last_name.value == "") {
+        formValid = false;
+        //display error message 
+        document.getElementById("SNameRequiredError").style.display = "block";
+        //stop form from submitting
+        event.preventDefault();
+    } else {
+         document.getElementById("SNameRequiredError").style.display = "none";
+    }
+
+    if (myForm.tel.value == "") {
+        formValid = false;
+        //display error message 
+        document.getElementById("TelRequiredError").style.display = "block";
+        //stop form from submitting
+        event.preventDefault();
+    } else {
+         document.getElementById("TelRequiredError").style.display = "none";
+    }
+
+    if (myForm.email.value == "") {
+        formValid = false;
+        //display error message 
+        document.getElementById("EmailRequiredError").style.display = "block";
+        //stop form from submitting
+        event.preventDefault();
+    } else {
+         document.getElementById("EmailRequiredError").style.display = "none";
+    }
+    
+  }
+
+</script>
+
+
+</body>
+</html>

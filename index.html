@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="page-wrap">
+    <nav id = "header">
+
+        <ul>
+            <li>
+                <a href="index.html"> Home </a>
+            </li>
+
+            <li>
+                <a href="lessons.html"> Lessons</a>
+            </li> 
+
+            <li>
+                <a href="contact.html"> Contact</a>
+            </li> 
+
+            <li>
+                <a href="about.html"> About</a>
+            </li> 
+        </ul>
+    </nav>
+        
+
+        <div class="Carousel"></div>
+
+            <div class="Slide">
+                <img src="Assets/img_mountains_wide.jpg">
+                <div class="text">Caption Text</div>
+            </div>
+            
+            <div class="Slide">
+                <img src="Assets/img_nature_wide.jpg">
+                <div class="text">Caption Two</div>
+            </div>
+            
+            <div class="Slide">
+                <img src="Assets/img_snow_wide.jpg">
+                <div class="text">Caption Three</div>
+            </div>
+
+
+        <div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        
+
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+
+        <div class = "container">
+
+        <div Class = "B1">
+            <img src= "Assets/watch.png">
+            <p>Follow our free videos and articles that walk you through how to accomplish common tasks with Power BI.</p>
+            <a href="lessons.html"> Lessons  ></a>
+        </div>
+        <div Class = "B1">
+            <img src= "Assets/contact.png">
+            <p>Contact us for further course information and course booking</p>
+            <a href="contact.html"> Contact  ></a>
+        </div>
+        <div Class = "B1">
+            <img src= "Assets/find.png">
+            <p>Learn more about us and read testimonials here</p>
+            <a href="about.html"> About  ></a>
+        </div>
+        </div> 
+
+
+        <div id = "S1">
+
+            <h1>What Is Power BI?</h1>
+
+            <p>Power BI is an analytics tool developed by Microsoft that turns your bits of unstructured data into a visually compelling story. It consists of the Power BI Desktop, the SaaS Power BI Service, and a range of mobile apps (iOS and Android compatible). These tools take big data and help your business or organization ask the right questions and receive actionable insights.</p>
+            <p>Power BI takes information from disparate data sources and turns them into custom visuals designed to help an organization not only read the info but get a clear idea of what to do. The right data visualization can be the difference between having unstructured data that disappears and using that data to make critical (and more importantly, correct) decisions.</p>
+            
+            <h1>Power BI Courses and Certifications</h1>
+
+            <p>Microsoft's Analyzing and Visualizing Data with Power BI gives you an overview of getting started with this powerful tool. Its comprehensive training gets you up and running with the Power BI desktop, Power BI mobile, and Power BI Service. You'll learn how to create Power BI reports and create dashboards both for team members and customers.</p>
+            <p>Those looking for IoT insights can take Microsoft's Business Intelligence for the Internet of Things. It's broad overview introduces not only Power BI but also Azure Time Series Analytics and how the two integrate using Power BI data.</p>
+            <p>Power BI is also a big part of quite a few of edX courses, preparing data engineers and managers with skills needed to access big data and scrub it for insight. These business users are better equipped to make decisions in the fourth industrial revolution.</p>
+            
+            <h1>Explore Careers with Power BI</h1>
+            <p>Power BI users have a range of potential careers including data scientists, product managers, and business analysts. Understanding power query, the role played by data warehouses, and everything from Microsoft flow to self-service analytics makes knowledgable users valuable resources for a variety of organizations. Analysts use the robust platform to discover key insights that can change the course of a business or organization for the better.</p>
+        
+        </div> 
+        </div> 
+
+        <div id = "pad"></div>
+
+        <footer class = "footer">
+            <ul>
+                <li><a href= # > Privicy & Cookies   </a></li>
+                <li><a href= # > Terms of Use   </a></li>
+            </ul>
+        </footer>
+    </div>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("Slide");
+              var dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }
+            </script>
+
+</body>
+</html>
